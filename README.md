@@ -9,7 +9,7 @@ Many researchers involved in SALURBAL are interested in using historical tempera
 
 Once we got the "complete" data for all of our 371 cities, we decided to estimate temperatures at an AD (level 2) level. In order to get temperature data at the AD city level, we weight the temperature pixels by population data (using 100m x 100m WorldPop data for 2010).
 
-Note: Since population data is not as accuradte for Panama and Peru, we weight temperature by urban footprint data instead for cities in those countries.
+Note: Since population data is not as accurate for Panama and Peru, we weight temperature by urban footprint data instead for cities in those countries.
 
 The workflow is as follows:  
 1. Create a vector from the temperature raster (in 9km x 9km cells). 
