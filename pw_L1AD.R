@@ -17,6 +17,8 @@ t=st_transform(st_as_sf(vectorized),4326)
 C_bound <- st_intersection(t, boundary)
 write_sf(C_bound, "vectorized2.shp")
 
+# >>> Created worldpoppers_bueno_convec.shp in GEE >>>>
+
 #Read in shapefile created in GEE and clean it (L1AD)
 teow<-readOGR(".","worldpoppers_bueno_convec")
 plot(teow)
