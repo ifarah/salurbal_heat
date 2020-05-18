@@ -9,8 +9,17 @@ library(sf)
 # 1. Create raster of worldpop:
 #Take temperature raster as a template
 temp <- raster("2001_Q/2001_Q1.nc", varname='t2m')
+
+AD <- readOGR("level1_gcs_modify3.shp")
+boundary=st_transform(st_as_sf(AD),4326)
+vectorized=rasterToPolygons(temp)
+t=st_transform(st_as_sf(vectorized),4326)
+C_bound <- st_intersection(t, boundary)
+write_sf(C_bound, "vectorized2.shp")
+
 #Read in shapefile created in GEE and clean it (L1AD)
 teow<-readOGR(".","worldpoppers_bueno_convec")
+plot(teow)
 xxx <- teow[,-2]
 #Establish extent and create raster frame
 ext <-  extent(temp)
