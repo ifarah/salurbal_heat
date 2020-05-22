@@ -55,7 +55,7 @@ var maineMeansFeatures = clipped.reduceRegions({
 var viz = {min:0.0, max:20, palette:"F3FEEE,00ff04,075e09,0000FF,FDFF92,FF2700,FF00E7"};                     
 Map.addLayer(maineMeansFeatures,viz)
 
-// Export the FeatureCollection to a shapefile: guf_panperu_vectorized_complete.shp
+// Export the FeatureCollection to a shapefile: guf_panperu_vectorized_complete.shp in wp_guf_vectorized zipfile
 Export.table.toDrive({
   collection: maineMeansFeatures,
   description:'guf_panperu_vectorized',
