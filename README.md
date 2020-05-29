@@ -1,6 +1,3 @@
-# UNDER CONSTRUCTION
-
-
 
 # Temperature data from 2001 - 2015 from ERA5Land
 ## Sample of 371 Latin American Cities 
@@ -23,12 +20,14 @@ For data processing, please view the Jupyter notebook and the folder containing 
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
 - [WorldPop data](https://www.worldpop.org/project/categories?id=3)
-- [Global Urban Footprint data]()
+- [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
 
 ### Access to imputed data:
-- [ERA5Land imputed data]()
+- [ERA5Land imputed data](https://drive.google.com/drive/folders/1LgTT9Vd2JbJti72LqmWqFz-36Dvb7d44)
 
-
+### Access to final data:
+- [L1 AD and UX data](https://drive.google.com/drive/folders/1k1WdQ3k6ypDndEhkvM691z-sa7Z76sfK)
+- [L2 data](https://drive.google.com/drive/folders/1domRgHFHNHCcMwFt8qp0zWi7IisA_dYM)
 
 
 
