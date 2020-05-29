@@ -13,9 +13,7 @@ The workflow is as follows:
 2. Import the vector and the AD boundaries into Google Earth Engine (GEE).
 3. Process WorldPop data in GEE, estimating the number of people by the 9km x 9km.
 4. Export the 9km x 9km pixels with population data into R.
-5. Carry out the population weight: Since both the temeprature and the population data are at the same resolution, we can carry out the estimation. 
-
-For data processing, please view the Jupyter notebook and the folder containing the [temperature data here](https://github.com/ifarah/salurbal_era5_ncdc/blob/master/data_processing.ipynb) and [raw table 1 here](https://github.com/ifarah/salurbal_era5_ncdc/blob/master/output/cor_table.xlsx).
+5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. 
 
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
@@ -29,5 +27,20 @@ For data processing, please view the Jupyter notebook and the folder containing 
 - [L1 AD and UX data](https://drive.google.com/drive/folders/1k1WdQ3k6ypDndEhkvM691z-sa7Z76sfK)
 - [L2 data](https://drive.google.com/drive/folders/1domRgHFHNHCcMwFt8qp0zWi7IisA_dYM)
 
+**Important notes**:  
+- The final tables are L1_ADUX_2001_2015.csv, L1_ADUX_wp_2001_2015.csv, L2_2001_2015.csv, and L2_wp_2001_2015.csv. Thw files containing "wp" have population weighted temperature means for all cities including Panama and Peru. L1_ADUX_2001_2015.csv and L2_2001_2015.csv have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
+- Leap years (2004, 2008, and 2012) are processed in alternative scripts within the *scripts* folder.
 
+**Codebook for L1:**  
+- SALID1: City ID. (6 digits)
+- ADtemp_pw: Population weighted temperature mean at L1AD level. 
+- ADtemp_x: Unweighted temperature mean at L1AD level. 
+- UXtemp_pw:Population weighted temperature mean at L1UXX level. 
+- UXtemp_x:  Unweighted temperature mean at L1UX level. 
+- date: year-month-day.
 
+**Codebook for L2:**  
+- SALID2: City ID (8 digits). 
+- L2temp_pw: Population weighted temperature mean at L2 level. 
+- L2temp_x: Unweighted temperature mean at L2 level. 
+- date: year-month-day. 
