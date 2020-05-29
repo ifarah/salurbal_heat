@@ -28,8 +28,10 @@ The workflow is as follows:
 - [L2 data](https://drive.google.com/drive/folders/1domRgHFHNHCcMwFt8qp0zWi7IisA_dYM)
 
 **Important notes**:  
-- The final tables are L1_ADUX_2001_2015.csv, L1_ADUX_wp_2001_2015.csv, L2_2001_2015.csv, and L2_wp_2001_2015.csv. Thw files containing "wp" have population weighted temperature means for all cities including Panama and Peru. L1_ADUX_2001_2015.csv and L2_2001_2015.csv have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
+- The final tables are L1_ADUX_2001_2015.csv, **L1_ADUX_wp_2001_2015.csv**, **L2_2001_2015.csv**, and **L2_wp_2001_2015.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015.csv** and **L2_2001_2015.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
 - Leap years (2004, 2008, and 2012) are processed in alternative scripts within the *scripts* folder.
+
+---
 
 **Codebook for L1:**  
 - SALID1: City ID. (6 digits)
