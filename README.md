@@ -42,6 +42,9 @@ The workflow is as follows:
 - UXtemp_x:  Unweighted temperature mean at L1UX level. 
 - date: year-month-day.
 
+Preview *L1_2001_2015.csv*:
+<img src="scripts/L1_preview.png" align="center" width="120%">
+
 **Codebook for L2:**  
 - SALID2: City ID (8 digits). 
 - L2temp_pw: Population weighted temperature mean at L2 level. 
