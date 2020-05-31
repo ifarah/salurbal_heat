@@ -12,9 +12,9 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 The workflow is as follows:  
 1. Create a vector from the temperature raster (in 9km x 9km cells). 
 2. Import the vector and the AD boundaries into Google Earth Engine (GEE).
-3. Process WorldPop data in GEE, estimating the number of people by the 9km x 9km.
-4. Export the 9km x 9km pixels with population data into R.
-5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. 
+3. Process WorldPop and GUF data in GEE, estimating the number of people and built environment by the 9km x 9km.
+4. Export the 9km x 9km pixels with population and built environment data into R.
+5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. Raster extraction using the *velox* library was significantly faster for processing the data.   
 
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
