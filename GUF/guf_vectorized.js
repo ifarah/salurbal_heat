@@ -1,5 +1,5 @@
 //Author: Irene Farah (irenef@berkeley.edu)
-//Create sum of GUF by 9km x 9km pixels (at the ERA5Land resolution)
+//Create sum of GUF by 9km x 9km pixels (at the ERA5Land resolution) using Google Earth Engine
 //Read in GUF files (first import them into the code (find in data folder))
 var pan_guf1=ee.Image(guf1);
 var pan_guf2=ee.Image(guf2);
