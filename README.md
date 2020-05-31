@@ -54,4 +54,4 @@ Preview *L1_2001_2015.csv*:
 
 Preview *L2_2001_2015.csv*:  
 
-<img src="scripts/L2_preview.png" align="center" width="35%">
+<img src="scripts/L2_preview.png" align="center" width="40%">
