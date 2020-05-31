@@ -1,5 +1,5 @@
 
-# Daily Mean temperature data from 2001 - 2015 from ERA5Land
+# Daily mean temperature data from 2001 - 2015 from ERA5Land
 ## Sample of 371 Latin American Cities 
 ### May 31, 2020
 
