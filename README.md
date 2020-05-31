@@ -43,7 +43,7 @@ The workflow is as follows:
 - date: year-month-day.
 
 Preview *L1_2001_2015.csv*:
-<img src="scripts/L1_preview.png" align="center" width="120%">
+<img src="scripts/L1_preview.png" align="center" width="70%">
 
 **Codebook for L2:**  
 - SALID2: City ID (8 digits). 
