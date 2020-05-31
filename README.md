@@ -1,6 +1,7 @@
 
 # Temperature data from 2001 - 2015 from ERA5Land
 ## Sample of 371 Latin American Cities 
+### May 31, 2020
 
 Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 30 km x 30 km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels. (Here include Yang's workflow). 
 
