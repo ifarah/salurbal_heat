@@ -15,6 +15,7 @@ The workflow is as follows:
 3. Process WorldPop and GUF data in GEE, estimating the number of people and built environment by the 9km x 9km.
 4. Export the 9km x 9km pixels with population and built environment data into R.
 5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. Raster extraction using the *velox* library was significantly faster for processing the data.   
+6. Paste together files with [paste.R](https://github.com/ifarah/salurbal_heat/blob/master/scripts/paste_v2.R)
 
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
