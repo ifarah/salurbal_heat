@@ -1,7 +1,7 @@
 
 # Daily mean temperature data - ERA5Land
 ## Sample of 371 Latin American Cities from 2001-2015
-### May 31, 2020
+### June 24, 2020
 
 Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 30 km x 30 km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels. (Here include Yang's workflow). 
 
@@ -22,14 +22,14 @@ The workflow is as follows:
 - [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
 
 ### Access to imputed data:
-- [ERA5Land imputed data](https://drive.google.com/drive/folders/1LgTT9Vd2JbJti72LqmWqFz-36Dvb7d44)
+- [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
 
 ### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/drive/folders/1k1WdQ3k6ypDndEhkvM691z-sa7Z76sfK)
-- [L2 data](https://drive.google.com/drive/folders/1domRgHFHNHCcMwFt8qp0zWi7IisA_dYM)
+- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
+- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
 
 **Important notes**:  
-- The final tables are L1_ADUX_2001_2015.csv, **L1_ADUX_wp_2001_2015.csv**, **L2_2001_2015.csv**, and **L2_wp_2001_2015.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015.csv** and **L2_2001_2015.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
+- The final tables are L1_ADUX_2001_2015.csv, **L1_ADUX_wp_2001_2015_v3.csv**, **L2_2001_2015_v3.csv**, and **L2_wp_2001_2015_v3.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015_v3.csv** and **L2_2001_2015_v3.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
 - Leap years (2004, 2008, and 2012) are processed in alternative scripts within the [scripts](https://github.com/ifarah/salurbal_heat/tree/master/scripts) folder.
 
 ---
@@ -42,7 +42,7 @@ The workflow is as follows:
 - UXtemp_x:  Unweighted temperature mean at L1UX level. 
 - date: year-month-day.
 
-Preview *L1_2001_2015.csv*:  
+Preview *L1_2001_2015_v3.csv*:  
 
 <img src="scripts/L1_preview.png" align="center" width="60%">
 
@@ -52,6 +52,6 @@ Preview *L1_2001_2015.csv*:
 - L2temp_x: Unweighted temperature mean at L2 level. 
 - date: year-month-day. 
 
-Preview *L2_2001_2015.csv*:  
+Preview *L2_2001_2015_v3.csv*:  
 
 <img src="scripts/L2_preview.png" align="center" width="40%">
