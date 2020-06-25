@@ -3,17 +3,34 @@
 ## Sample of 371 Latin American Cities from 2001-2015
 ### June 24, 2020
 
-### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
-- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
-
-Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 30 km x 30 km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels. (Yang Ju's work). 
+Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 30 km x 30 km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels.
 
 Once we got the "complete" data for all of our 371 cities, we decided to estimate temperatures at an AD (level 2) level. In order to get temperature data at the AD city level, we weight the temperature pixels by population data (using 100m x 100m WorldPop data for 2010).
 
 Note: Since population data is not as accurate for Panama and Peru, we weight temperature by urban footprint data instead for cities in those countries.
 
-The workflow is as follows:  
+### Access to final data:
+- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
+- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
+
+---
+
+## Data Imputation
+
+To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels:  $ERA5land=f(X)+\epsilon$. 
+
+Where:
+- $X$ is a vector including resampled ERA5 temperature from 31 km resolution to 9 km resolution with cubic resampling, absolute elevation (9 km resolution), relative elevation (elevation difference of a 9 by 9 km pixel and its surroundings), and aspect (9 km resolution);  
+- $f(X)$ is a function that uses X to regress ERA5land temperature. Here we used random forest regression.  
+- \epsilon is the residual, or $ERA5land- f(X)$, which we further modeled with kriging spatial interpolation.  
+
+We ran this model by each day and each geographic unit (L1AD) containing missing ERA5 missing pixels. In each geographic unit, we included all ERA5land pixels and pixels within a 15-pixel buffer from the boundary to have enough samples to build the model above. To avoid overfitting, we used cross-validation to tune the parameters for both random forest regression and kriging spatial interpolation. Finally, we used the resulting model to impute the missing values.  
+
+Note: In two cases we did not include kriging spatial interpolation in the imputation:
+1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5land coverage;
+2. If kriging spatial interpolation produced large values, which we often found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
+
+## Applying the weights on the imputed data 
 1. Create a vector from the temperature raster (in 9km x 9km cells). 
 2. Import the vector and the AD boundaries into Google Earth Engine (GEE).
 3. Process WorldPop and GUF data in GEE, estimating the number of people and built environment by the 9km x 9km.
