@@ -9,10 +9,6 @@ Once we got the "complete" data for all of our 371 cities, we decided to estimat
 
 Note: Since population data is not as accurate for Panama and Peru, we weight temperature by urban footprint data instead for cities in those countries.
 
-### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
-- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
-
 ### Access to raw data:
 - [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
 - [WorldPop data](https://www.worldpop.org/project/categories?id=3)
@@ -20,6 +16,10 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 
 ### Access to imputed data:
 - [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
+
+### Access to final data:
+- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
+- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
 
 ---
 
