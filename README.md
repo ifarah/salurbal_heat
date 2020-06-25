@@ -40,7 +40,7 @@ We ran this model by each day and each geographic unit (L1AD) containing missing
 
 **Note**: In two cases we did not include kriging spatial interpolation in the imputation:
 1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5land coverage;
-2. If kriging spatial interpolation produced large values, which we often found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
+2. If kriging spatial interpolation produced large values, which we seldomly found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
 
 ## Applying the weights on the imputed data 
 1. Create a vector from the temperature raster (in 9km x 9km cells). 
