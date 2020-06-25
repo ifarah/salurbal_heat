@@ -13,6 +13,13 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 - [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
 - [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
 
+### Access to raw data:
+- [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
+- [WorldPop data](https://www.worldpop.org/project/categories?id=3)
+- [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
+
+### Access to imputed data:
+- [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
 
 ---
 
@@ -30,7 +37,7 @@ where:
 
 We ran this model by each day and each geographic unit (L1AD) containing missing ERA5 missing pixels. In each geographic unit, we included all ERA5land pixels and pixels within a 15-pixel buffer from the boundary to have enough samples to build the model above. To avoid overfitting, we used cross-validation to tune the parameters for both random forest regression and kriging spatial interpolation. Finally, we used the resulting model to impute the missing values.  
 
-Note: In two cases we did not include kriging spatial interpolation in the imputation:
+**Note**: In two cases we did not include kriging spatial interpolation in the imputation:
 1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5land coverage;
 2. If kriging spatial interpolation produced large values, which we often found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
 
@@ -42,16 +49,8 @@ Note: In two cases we did not include kriging spatial interpolation in the imput
 5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. Raster extraction using the *velox* library was significantly faster for processing the data. Data processing in the [scripts](https://github.com/ifarah/salurbal_heat/tree/master/scripts) folder.   
 6. Paste together files with [paste.R](https://github.com/ifarah/salurbal_heat/blob/master/scripts/paste_v2.R)
 
-### Access to raw data:
-- [ERA5 hourly data on single levels](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview)
-- [WorldPop data](https://www.worldpop.org/project/categories?id=3)
-- [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
 
-### Access to imputed data:
-- [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
-
-
-**Important notes**:  
+**Notes**:  
 - The final tables are L1_ADUX_2001_2015.csv, **L1_ADUX_wp_2001_2015_v3.csv**, **L2_2001_2015_v3.csv**, and **L2_wp_2001_2015_v3.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015_v3.csv** and **L2_2001_2015_v3.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
 - To make the data processing faster, download the [RData files](https://drive.google.com/drive/folders/1GSB6qLZN1eJo2-tNh7gWSReZgAo6p8gk) for L1 or L2.  
 - Make sure to run the processes differently for leap years. Leap years (2004, 2008, and 2012) are processed using 366 instead of 365 days in a year within the loop.
