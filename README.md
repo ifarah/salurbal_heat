@@ -80,7 +80,7 @@ Preview *L2_2001_2015_v3.csv*:
 
 <img src="scripts/L2_preview.png" align="center" width="40%">
 
-**Contact**. 
+**Contact:** 
 - Yang Ju (yangju90@berkeley.edu)
 - Irene Farah (irenef@berkeley.edu)
 
