@@ -18,14 +18,7 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 
 ## Data Imputation
 
-
-\begin{equation}
-\sum_{\forall i}{x_i^{2}}
-\end{equation}
-
-$ \sum_{\forall i}{x_i^{2}} $
-
-<img src="https://render.githubusercontent.com/render/math?math=e^{i +\pi} =x+1">
+<img src="https://render.githubusercontent.com/render/math?math=e^{i %2B\pi} =x%2B1">
 To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: 
 <img src="https://render.githubusercontent.com/render/math?math=ERA5land=f(X) + \epsilon">
 
