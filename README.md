@@ -18,7 +18,7 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 
 ## Data Imputation
 
-To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: <img src="https://render.githubusercontent.com/render/math?math=e^{i +\pi} =x+1">
+To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: <img src="https://render.githubusercontent.com/render/math?math=ERA5land=f(X)+\epsilon">
 
 where:
 - <img src="https://render.githubusercontent.com/render/math?math=$X$> is a vector including resampled ERA5 temperature from 31 km resolution to 9 km resolution with cubic resampling, absolute elevation (9 km resolution), relative elevation (elevation difference of a 9 by 9 km pixel and its surroundings), and aspect (9 km resolution);  
