@@ -13,6 +13,7 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 - [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
 - [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
 
+![formula](https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1)
 ---
 
 ## Data Imputation
