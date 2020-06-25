@@ -18,12 +18,13 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 
 ## Data Imputation
 
-To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: <img src="https://render.githubusercontent.com/render/math?math=ERA5land=f(X)+\epsilon">
+To impute the missing values, we built the following model for each day and geography (L1AD) with missing ERA5land pixels: 
+<img src="https://render.githubusercontent.com/render/math?math=ERA5land=f(X)+\epsilon">
 
 where:
-- <img src="https://render.githubusercontent.com/render/math?math=$X$> is a vector including resampled ERA5 temperature from 31 km resolution to 9 km resolution with cubic resampling, absolute elevation (9 km resolution), relative elevation (elevation difference of a 9 by 9 km pixel and its surroundings), and aspect (9 km resolution);  
-- <img src="https://render.githubusercontent.com/render/math?math=$f(X)$> is a function that uses X to regress ERA5land temperature. Here we used random forest regression.  
-- <img src="https://render.githubusercontent.com/render/math?math=\epsilon> is the residual, or $ERA5land- f(X)$, which we further modeled with kriging spatial interpolation.  
+- <img src="https://render.githubusercontent.com/render/math?math=$X$"> is a vector including resampled ERA5 temperature from 31 km resolution to 9 km resolution with cubic resampling, absolute elevation (9 km resolution), relative elevation (elevation difference of a 9 by 9 km pixel and its surroundings), and aspect (9 km resolution);  
+- <img src="https://render.githubusercontent.com/render/math?math=f(X)"> is a function that uses X to regress ERA5land temperature. Here we used random forest regression.  
+- <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> is the residual, or $ERA5land- f(X)$, which we further modeled with kriging spatial interpolation.  
 
 We ran this model by each day and each geographic unit (L1AD) containing missing ERA5 missing pixels. In each geographic unit, we included all ERA5land pixels and pixels within a 15-pixel buffer from the boundary to have enough samples to build the model above. To avoid overfitting, we used cross-validation to tune the parameters for both random forest regression and kriging spatial interpolation. Finally, we used the resulting model to impute the missing values.  
 
