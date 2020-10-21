@@ -15,7 +15,7 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 - [Global Urban Footprint data](https://drive.google.com/drive/folders/1_NM6c_SDAqb0LAOXt8LpbTT7eIL3HgAY)
 
 ### Access to imputed data:
-- [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
+- [ERA5Land imputed data](https://drive.google.com/drive/folders/1Eps9MGcVt_7Yn32Yboub3FVZZnQVrD14?usp=sharing)
 
 ### Access to final data:
 - [L1 AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing)
