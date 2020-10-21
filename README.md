@@ -1,11 +1,11 @@
 
 # Daily mean temperature data - ERA5Land
-## Sample of 371 Latin American Cities from 2001-2015
-### June 24, 2020
+## Sample of 371 Latin American Cities from 1996-2015
+### Oct 21, 2020
 
 Many researchers involved in SALURBAL are interested in using historical temperature reanalysis data. ERA5Land data neglects pixels that have more than 50% water. However, many cities across the world are situated next to the ocean. Since we were losing information, our team interpolated data from ERA5 (at a 30 km x 30 km resolution) and imputed it at the ERA5Land 9km x 9km resolution, filling the gaps from those "missing" pixels.
 
-Once we got the "complete" data for all of our 371 cities, we decided to estimate temperatures at an AD (level 2) level. In order to get temperature data at the AD city level, we weight the temperature pixels by population data (using 100m x 100m WorldPop data for 2010).
+Once we got the "complete" data for all of our 371 cities, we decided to estimate temperatures at an AD (level 2) level. In order to get temperature data at the AD city level, we weight the temperature pixels by how much the pixels overlap with a city and by population data (using 100m x 100m WorldPop data for 2010).
 
 Note: Since population data is not as accurate for Panama and Peru, we weight temperature by urban footprint data instead for cities in those countries.
 
@@ -18,8 +18,8 @@ Note: Since population data is not as accurate for Panama and Peru, we weight te
 - [ERA5Land imputed data](https://drive.google.com/drive/folders/1EwfXOAIxosSN-sEHMJud5dEew1_WZf9I)
 
 ### Access to final data:
-- [L1 AD and UX data](https://drive.google.com/drive/folders/1WSVRRjHhRy69CkO0wKkngH98imQlmrmk)
-- [L2 data](https://drive.google.com/drive/folders/1P5r1Xu7-SGmCrrlagI2vrgV7e-au-oOT)
+- [L1 AD and UX data](https://drive.google.com/file/d/1Is1w0Oq5boAW6SlGlMWNP3C1IeiRey8R/view?usp=sharing)
+- [L2 data](https://drive.google.com/file/d/1oa72qk_2zzbePTr9kCKzKs4DxhZl7I5Z/view?usp=sharing)
 
 ---
 
@@ -52,7 +52,7 @@ We ran this model by each day and each geographic unit (L1AD) containing missing
 
 
 **Notes**:  
-- The final tables are L1_ADUX_2001_2015.csv, **L1_ADUX_wp_2001_2015_v3.csv**, **L2_2001_2015_v3.csv**, and **L2_wp_2001_2015_v3.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015_v3.csv** and **L2_2001_2015_v3.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
+- The final tables are L1_AD_UX_96_15.csv, **L1_ADUX_wp_2001_2015_v3.csv**, **L2_2001_2015_v3.csv**, and **L2_wp_2001_2015_v3.csv**. The files containing "wp" have population weighted temperature means for all cities including Panama and Peru. **L1_ADUX_2001_2015_v3.csv** and **L2_2001_2015_v3.csv** have population weighted temperature means for all cities except Panama and Peru that have GUF weighted temperature means for cities in those countries.  
 - To make the data processing faster, download the [RData files](https://drive.google.com/drive/folders/1GSB6qLZN1eJo2-tNh7gWSReZgAo6p8gk) for L1 or L2.  
 - Make sure to run the processes differently for leap years. Leap years (2004, 2008, and 2012) are processed using 366 instead of 365 days in a year within the loop.
 
