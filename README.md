@@ -42,13 +42,16 @@ We ran this model by each day and each geographic unit (L1AD) containing missing
 1. If adding kriging spatial interpolation led to worse model fit when compared with using random forest regression alone, in where we had both ERA5 and ERA5land coverage;
 2. If kriging spatial interpolation produced large values, which we seldomly found for the missing pixels. We decided the threshold to be 1 degree in absolute value. We chose this threshold as we observed the model residuals from using random forest alone were less than 1. Since kriging spatial interpolation was meant to further reduce these residuals, we considered kriging values greater than 1 to be anomalies and thus abandoned. 
 
-## Applying the weights on the imputed data 
-1. Create a vector from the temperature raster (in 9km x 9km cells). 
-2. Import the vector and the AD boundaries into Google Earth Engine (GEE).
-3. Process WorldPop and GUF data in GEE, estimating the number of people and built environment by the 9km x 9km.
-4. Export the 9km x 9km pixels with population and built environment data into R.
-5. Carry out the population weight: Since both the temperature, population, and Global Urban Footprint data are at the same resolution, we can carry out the estimation. Raster extraction using the *velox* library was significantly faster for processing the data. Data processing in the [scripts](https://github.com/ifarah/salurbal_heat/tree/master/scripts) folder.   
-6. Paste together files with [paste.R](https://github.com/ifarah/salurbal_heat/blob/master/scripts/paste_v2.R)
+## Calculting areal-level temperature 
+Daily mean temperature at the city and sub-city levels from 1996 to 2015. We provide area-weighted averages for each spatial unit as well as averages further weighted by population, using 100m x 100m WorldPop data for 2010. Since population data is not accurate for Panama and Peru, for cities in these two countries we weight temperature by urban footprint data (Global Urban Footprint). 
+For a spatial unit, its daily mean temperature is calculated as:
+T_(i,d)=(∑_(t=1)^n▒T_(t,i,d) )/n
+T_d=(∑_(i=1)^m▒〖w_i T〗_(i,d) )/(∑_(i=1)^m▒w_i )
+Where T_(t,i,d) is the temperature of hour t in grid cell i on day d, T_(i,d) is the daily mean temperature of day d in grid cell i, T_d is the area-level weighted average of daily mean temperature on day d, w_i is a weighting factor, which equals to:
+w_i=〖area〗_i                                                   for area weighted values,
+w_i=〖area〗_i×〖population(GUF)〗_i          for area and population (GUF) weighted values
+where 〖area〗_i is the area of the overlap between grid cell i and the spatial unit, 〖population(GUF)〗_i is the population or GUF urban footprint area of grid cell i
+
 
 
 **Notes**:  
